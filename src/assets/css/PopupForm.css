@@ -1,0 +1,137 @@
+.form-containerr select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  .form-containerr select:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .form-containerr .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+  }
+  
+  .form-containerr .cancel {
+    background-color: red;
+  }
+  
+  .form-containerr .btn:hover {
+    opacity: 1;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fffae4;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .close:hover {
+    color: red;
+  }
+  /* uploadd */
+  .custum-file-upload {
+    height: 200px;
+    margin-top: 20px;
+    width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: 2px dashed #e8e8e8;
+    background-color: #212121;
+    padding: 1.5rem;
+    border-radius: 10px;
+    
+}
+  
+  .custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .icon svg {
+    height: 80px;
+    fill: #e8e8e8;
+  }
+  
+  .custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .text span {
+    font-weight: 400;
+    color: #e8e8e8;
+  }
+  
+  .custum-file-upload input {
+    display: none;
+  }
+  .buttonn {
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #fffae4af;
+    background-size: 400%;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .buttonn:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .buttonn-content {
+    position: relative;
+    color: #000;
+    
+    z-index: 1;
+  }
+  
+  .buttonn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    color: #000;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      rgb(214, 190, 146) 10.8%,
+      rgb(235, 210, 129) 94.3%
+    );
+    transition: all 0.475s;
+  }

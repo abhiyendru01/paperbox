@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Sidebar from './components/sidebar.jsx';
+import Header from './components/header.jsx';
+import Main from './components/Main.jsx';
+import PopupForm from './components/PopupForm.jsx';
+import DropdownMenu from './components/DropdownMenu.jsx';
+import Footer from './components/footer.jsx';
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [formOpen, setFormOpen] = useState(false);
+
+  const openNav = () => setSidebarOpen(true);
+  const closeNav = () => setSidebarOpen(false);
+  const openForm = () => setFormOpen(true);
+  const closeForm = () => setFormOpen(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {sidebarOpen && <Sidebar closeNav={closeNav} />}
+      <Header openNav={openNav} openForm={openForm} />
+      <DropdownMenu />
+      <Main />
+      {formOpen && <PopupForm closeForm={closeForm} />}
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
