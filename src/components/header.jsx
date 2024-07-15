@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/css/Header.css';
+import '../App.js';
+import '../assets/css/Sidebar.css';
 
 function Header({ openForm }) {
   const [navVisible, setNavVisible] = useState(false);
@@ -10,6 +12,7 @@ function Header({ openForm }) {
 
   return (
     <header>
+      
       <div className="menu-icon" onClick={openNav}>&#9776;</div>
       <div className="group">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="search-icon">
