@@ -8,6 +8,12 @@
     bottom: 0;
   }
   
+  @media (max-width: 768px) {
+    .footer {
+      padding: 10px 0;
+    }
+  }
+  
   .footer a {
     text-decoration: none;
     color: #fffae456;
@@ -19,8 +25,11 @@
     font-size: 16px;
     margin: 5px 0;
   }
+  
   .footer .social-icons {
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .footer .social-icons .icon {
