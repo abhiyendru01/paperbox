@@ -1,18 +1,18 @@
 import React from 'react';
 import '../assets/css/Sidebar.css';
 
-function Sidebar({ closeNav }) {
+const Sidebar = ({ navVisible, closeNav }) => {
   return (
-    <div id="sidebar" className="sidebar">
-      <button type="button" className="close-button" onClick={closeNav}>
-        <i className="fa fa-times" aria-hidden="true"></i>
-      </button>
-      <a href="/">Home</a>
-      <a href="/notes">Notes</a>
-      <a href="/upload">Upload</a>
-      <a href="/profile">Profile</a>
+    <div id="sidebar" className={`sidebar ${navVisible ? 'open' : ''}`}>
+      <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
+        &times;
+      </a>
+      <a href="./">Home</a>
+      <a href="./">Notes</a>
+      <a href="./">Upload</a>
+      <a href="./">Profile</a>
     </div>
   );
-}
+};
 
 export default Sidebar;
