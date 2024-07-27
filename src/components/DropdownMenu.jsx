@@ -22,7 +22,7 @@ function DropdownMenu() {
 
   return (
     <div className="user-profile" onClick={toggleDropdown}>
-      <i className="fa fa-user" aria-hidden="true"></i>
+      <i className="" aria-hidden="true"></i>
       {isOpen && (
         <div id="dropdownContent" className="dropdown-content show">
           <a href="/profile">Profile</a>
