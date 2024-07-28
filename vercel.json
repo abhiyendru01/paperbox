@@ -1,0 +1,12 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/components/**/*.js",
+      "use": "@vercel/node"
+    }
+  ]
+}
