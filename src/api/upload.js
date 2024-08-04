@@ -1,34 +1,34 @@
-import nextConnect from 'next-connect';
-import multer from 'multer';
+import { IncomingForm } from 'formidable';
+import path from 'path';
+import fs from 'fs';
 
-const upload = multer({
-  storage: multer.memoryStorage(),
-});
+const uploadDir = path.join(process.cwd(), 'uploads');
 
-const apiRoute = nextConnect({
-  onError(error, req, res) {
-    res.status(501).json({ error: `Something went wrong! ${error.message}` });
-  },
-  onNoMatch(req, res) {
-    res.status(405).json({ error: `Method ${req.method} not allowed` });
-  },
-});
+// Ensure the uploads directory exists
+if (!fs.existsSync(uploadDir)){
+    fs.mkdirSync(uploadDir);
+}
 
-apiRoute.use(upload.single('file'));
-
-apiRoute.post((req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ error: 'No file uploaded.' });
+export default async (req, res) => {
+  if (req.method === 'POST') {
+    const form = new IncomingForm();
+    
+    form.uploadDir = uploadDir;
+    form.keepExtensions = true;
+    
+    form.parse(req, (err, fields, files) => {
+      if (err) {
+        console.error('Error parsing the file:', err);
+        return res.status(500).json({ error: 'Error parsing the file.' });
+      }
+      
+      if (!files.file) {
+        return res.status(400).send('No file uploaded.');
+      }
+      
+      res.status(200).send('File uploaded successfully.');
+    });
+  } else {
+    res.status(405).send('Method Not Allowed');
   }
-
-  // You can process the file here or send it back to the client
-  res.status(200).json({ message: 'File uploaded successfully.', file: req.file });
-});
-
-export default apiRoute;
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
 };
