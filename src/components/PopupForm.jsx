@@ -43,12 +43,12 @@ function PopupForm({ isOpen, onClose }) {
     data.append('file', formData.file);
 
     try {
-      await axios.post('http://localhost:5000/upload', data, {
+      await axios.post('../api/upload.js', data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      
+
       onClose(); // Close the form immediately upon successful upload
 
       MySwal.fire({
