@@ -9,6 +9,7 @@ if (!fs.existsSync(uploadDir)){
     fs.mkdirSync(uploadDir);
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
   if (req.method === 'POST') {
     const form = new IncomingForm();
