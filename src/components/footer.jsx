@@ -4,7 +4,7 @@ import '../assets/css/Footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
-     <b> <p>&copy; paperbox</p> </b>
+     <b> <p>&copy; SMS</p> </b>
       <nav>
         
       </nav>

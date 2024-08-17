@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import { SpeedInsights } from "@vercel/speed-insights/react"
 import Sidebar from './components/sidebar.jsx';
 import Header from './components/header.jsx';
 import Main from './components/Main.jsx';
@@ -11,6 +10,7 @@ import Footer from './components/footer.jsx';
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(''); // Manage the search term
 
   const openNav = () => setSidebarOpen(true);
   const closeNav = () => setSidebarOpen(false);
@@ -20,15 +20,13 @@ function App() {
   return (
     <div className="App">
       {sidebarOpen && <Sidebar closeNav={closeNav} />}
-      <Header openNav={openNav} openForm={openForm} />
+      <Header openNav={openNav} openForm={openForm} setSearchTerm={setSearchTerm} /> {/* Pass setSearchTerm */}
       <DropdownMenu />
-      <Main />
+      <Main searchTerm={searchTerm} /> {/* Pass searchTerm */}
       {formOpen && <PopupForm closeForm={closeForm} />}
-      <SpeedInsights/>
       <Footer />
     </div>
   );
 }
 
 export default App;
-

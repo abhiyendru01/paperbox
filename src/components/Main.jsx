@@ -5,10 +5,11 @@ const semesters = [
   "CHE110", "CSE111", "CSE326", "ECE249", "ECE279", "INT108", "MTH174", "PES318",
   "CSE101", "CSE121", "CSE320", "INT306", "MEC135", "PHY110", "MTH401", "PEL130",
   "CSE202", "CSE205", "CSE211", "CSE306", "CSE307", "PEL134", "MTH302",
-  "CSE310", "CSE316", "CSE325", "CSE408", "INT330", "INT362", "INT426", "PEA305"
+  "CSE310", "CSE316", "CSE325", "CSE408", "INT330", "INT362", "INT426", "PEA305",
+  "CSE322","+ ADD"
 ];
 
-function Main() {
+function Main({ searchTerm }) { // Receive the searchTerm as a prop
   const [selectedSemester, setSelectedSemester] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -25,14 +26,23 @@ function Main() {
     setOpenDropdown(openDropdown === folder ? null : folder);
   };
 
+  // Filter semesters based on the search term
+  const filteredSemesters = semesters.filter(semester =>
+    semester.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <main>
       <section className="semesters">
-        {semesters.map((semester, index) => (
-          <div className="semester" key={index} onClick={() => handleClick(semester)}>
-            {semester}
-          </div>
-        ))}
+        {filteredSemesters.length > 0 ? (
+          filteredSemesters.map((semester, index) => (
+            <div className="semester" key={index} onClick={() => handleClick(semester)}>
+              {semester}
+            </div>
+          ))
+        ) : (
+          <div className="no-results">No subjects found for "{searchTerm}"</div>
+        )}
       </section>
       {selectedSemester && (
         <div className="popupp">
@@ -50,7 +60,6 @@ function Main() {
                   <div className="dropdown-item">Unit 4</div>
                   <div className="dropdown-item">Unit 5</div>
                   <div className="dropdown-item">Unit 6</div>
-                 
                 </div>
               </div>
               <div className="folder" onClick={() => handleFolderClick('previousYearPapers')}>
@@ -59,19 +68,15 @@ function Main() {
                 <div className={`dropdown-menu ${openDropdown === 'previousYearPapers' ? 'show' : ''}`}>
                   <div className="dropdown-item">Mid Term</div>
                   <div className="dropdown-item">End Term</div>
-                  
-                  {/* Add more years as needed */}
                 </div>
               </div>
               <div className="folder" onClick={() => handleFolderClick('syllabus')}>
                 <i className="fas fa-folder"></i>
                 Syllabus
-                {/* Add dropdown items if needed */}
               </div>
               <div className="folder" onClick={() => handleFolderClick('assignments')}>
                 <i className="fas fa-folder-open"></i>
                 Sample Papers
-                {/* Add dropdown items if needed */}
               </div>
             </div>
           </div>

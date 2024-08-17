@@ -3,7 +3,7 @@
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #070707;
-  color: #fffae4af;
+  color: #f19035af;
   margin: 0;
   padding: 0;
   display: flex;
@@ -29,7 +29,7 @@ main {
 
 .semester {
   background-image: linear-gradient(133.84deg, #4E4E4E -16.04%, #333333 9.33%, #1A1A1A 32.02%, #1A1A1A 62.06%, #262626 87.42%, #4E4E4E 112.12%);
-  border: 3px solid #fffae463;
+  border: 3px solid #e477125d;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   display: flex;
@@ -37,6 +37,7 @@ main {
   justify-content: center;
   padding: 30px 20px; /* Adjusted padding */
   text-align: center;
+  color: #fff0d5a2;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -45,8 +46,8 @@ main {
 
 
 .semester:hover {
-  background-image: linear-gradient(220.55deg, #fffae4af 0%, #8B8B8B 100%);
-  color: #2C2C2C;
+  background-image: linear-gradient(220.55deg, #f0790a5b 0%, #eb984a83 100%);
+  color: #ffcca9;
   transform: scale(1.05);
 }
 
@@ -100,7 +101,7 @@ main {
 
 .folder {
   background-image: linear-gradient(133.84deg, #4E4E4E -16.04%, #333333 9.33%, #1A1A1A 32.02%, #1A1A1A 62.06%, #262626 87.42%, #4E4E4E 112.12%);
-  border: 3px solid #fffae463;
+  border: 3px solid #e477125d;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   display: flex;
@@ -115,7 +116,7 @@ main {
 }
 
 .folder:hover {
-  background-image: linear-gradient(220.55deg, #fffae4af 0%, #8B8B8B 100%);
+  background-image: linear-gradient(220.55deg, #f0790a5b 0%, #eb984a83 100%);
   color: #2C2C2C;
   transform: scale(1.05);
 }
@@ -124,29 +125,29 @@ main {
   margin-bottom: 10px;
   gap: 10px;
 }
-/* Updated styles for dropdowns */
+
 .dropdown-menu {
-  display: none; /* Initially hidden */
-  position: absolute; /* Position relative to the folder */
-  top: 100%; /* Position dropdown below the folder */
+  display: none; 
+  position: absolute; 
+  top: 100%; 
   left: 0;
-  width: 200px; /* Set a fixed width for dropdown */
-  background: #2a2a2a; /* Background color for dropdown */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-  z-index: 9990; /* Ensure it appears above other content */
+  width: 200px; 
+  background: #2a2a2a;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9990; 
   padding: 10px;
 }
 
 .folder:hover .dropdown-menu,
 .dropdown-menu.show {
-  display: block; /* Show dropdown on hover or when active */
+  display: block; 
 }
 
 .dropdown-item {
-  padding: 10px 15px; /* Padding inside items */
-  color: #fffae4af; /* Text color */
-  cursor: pointer; /* Pointer cursor on hover */
+  padding: 10px 15px; 
+  color: #fffae4af; 
+  cursor: pointer; 
   transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
   border-radius: 4px; /* Rounded corners for items */
 }
@@ -154,6 +155,26 @@ main {
 .dropdown-item:hover {
   background-color: #444; /* Background on hover */
   color: #fff; /* Text color on hover */
+}
+
+.search-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-input {
+  padding: 8px;
+  width: 80%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.no-results {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
 /* Ensure dropdowns are properly sized and positioned */

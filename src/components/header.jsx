@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../assets/css/Header.css';
-import '../assets/css/PopupForm.css';
-import PopupForm from './PopupForm.jsx'; // Import the PopupForm component
+import PopupForm from './PopupForm.jsx';
+import logo from './sms.png';
 
-function Header() {
+function Header({ openNav, openForm, setSearchTerm }) { // Receive setSearchTerm as a prop
   const [isPopupOpen, setPopupOpen] = useState(false);
 
   const handleButtonClick = () => {
@@ -14,16 +14,18 @@ function Header() {
     setPopupOpen(false);
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value); // Update the search term as the user types
+  };
+
   return (
     <header>
-      <div className="menu-icon">&#9776;</div>
+      <img src={logo} alt="logo" className="logo" />
       
       <div className="group">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="search-icon">
           <g>
-            <path
-              d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-            ></path>
+            <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
           </g>
         </svg>
         <input
@@ -32,6 +34,7 @@ function Header() {
           type="search"
           placeholder="Search..."
           name="searchbar"
+          onChange={handleSearch} // Handle the search input
         />
       </div>
       
@@ -54,9 +57,7 @@ function Header() {
         <span className="upload-text">Upload</span>
       </button>
 
-      {/* Render the PopupForm component */}
       <PopupForm isOpen={isPopupOpen} onClose={handleClosePopup} />
-
       <label class="popup">
 <input type="checkbox" />
 <div tabindex="0" class="burger">
