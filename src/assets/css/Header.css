@@ -35,7 +35,6 @@ header {
 /* Adjust Logo Size for Smaller Screens */
 @media (max-width: 768px) {
   .logo {
-    display: none;
     max-width: 70px; /* Adjust for tablets */
   }
 }
@@ -403,11 +402,6 @@ main {
   .button {
     padding: 8px 16px;
   }
-
-  .logo {
-    max-width: 60px;
-  }
-
   .popup-window {
     max-width: 80vw;
     max-height: 80vh;
@@ -427,10 +421,6 @@ main {
 
   .search-bar input {
     padding: 6px;
-  }
-
-  .logo {
-    max-width: 50px;
   }
 
   .popup-window {

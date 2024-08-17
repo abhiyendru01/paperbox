@@ -6,10 +6,10 @@ const semesters = [
   "CSE101", "CSE121", "CSE320", "INT306", "MEC135", "PHY110", "MTH401", "PEL130",
   "CSE202", "CSE205", "CSE211", "CSE306", "CSE307", "PEL134", "MTH302",
   "CSE310", "CSE316", "CSE325", "CSE408", "INT330", "INT362", "INT426", "PEA305",
-  "CSE322","+ ADD"
+  "CSE322", "+ ADD"
 ];
 
-function Main({ searchTerm }) { // Receive the searchTerm as a prop
+function Main({ searchTerm }) { 
   const [selectedSemester, setSelectedSemester] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -37,6 +37,7 @@ function Main({ searchTerm }) { // Receive the searchTerm as a prop
         {filteredSemesters.length > 0 ? (
           filteredSemesters.map((semester, index) => (
             <div className="semester" key={index} onClick={() => handleClick(semester)}>
+              <i className="fas fa-folder"></i> {/* Folder icon */}
               {semester}
             </div>
           ))

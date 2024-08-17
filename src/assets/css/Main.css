@@ -35,7 +35,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px; /* Adjusted padding */
+  padding: 10px 20px; /* Adjusted padding to fit icon and text */
   text-align: center;
   color: #fff0d5a2;
   font-size: 20px;
@@ -44,12 +44,16 @@ main {
   transition: background-color 0.3s, transform 0.3s;
 }
 
+.semester i {
+  margin-right: 10px; /* Space between icon and text */
+}
 
 .semester:hover {
   background-image: linear-gradient(220.55deg, #f0790a5b 0%, #eb984a83 100%);
   color: #ffcca9;
   transform: scale(1.05);
 }
+
 
 .popupp {
   position: fixed;
@@ -146,7 +150,7 @@ main {
 
 .dropdown-item {
   padding: 10px 15px; 
-  color: #fffae4af; 
+  color: #f8a649af; 
   cursor: pointer; 
   transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
   border-radius: 4px; /* Rounded corners for items */
@@ -199,6 +203,41 @@ main {
 .folder i {
   margin-right: 10px;
   font-size: 24px;
+}
+
+.add-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.add-form input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+}
+
+.add-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #f0790a;
+  cursor: pointer;
+}
+
+.add-form button:hover {
+  background-color: #e67e22;
 }
 
 @media (max-width: 767px) {
