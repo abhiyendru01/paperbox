@@ -1,3 +1,4 @@
+/* General Header Styles */
 header {
   display: flex;
   position: relative;
@@ -8,6 +9,7 @@ header {
   border-bottom: 2px solid #14110310;
 }
 
+/* Search Bar Styles */
 .search-bar {
   flex-grow: 1;
   margin: 0 30px;
@@ -21,54 +23,30 @@ header {
   background-color: #311f11;
   color: #fffae4af;
 }
-.group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
-  position: relative;
-  width: 80%;
-}
 
-.input {
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  height: 45px;
-  padding-left: 2.5rem;
-  box-shadow: 0 0 0 1.5px #37332b, 0 0 25px -17px #000;
-  border: 0;
-  border-radius: 12px;
-  background-color: #472709;
-  outline: none;
-  color: #bdbecb;
-  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
-  cursor: text;
-  z-index: 0;
-}
-
-.input::placeholder {
-  color: #bdbecb;
-}
-
-.input:hover {
-  box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
-}
-
-.input:active {
-  transform: scale(0.95);
-}
-
-.input:focus {
-  box-shadow: 0 0 0 2.5px #2f303d;
-}
-
+/* Logo Styles */
 .logo {
-  width: 100px; /* Adjust the width */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Prevents the image from being too large for its container */
-  padding: 5px; /* Optional: Add padding if needed */
-  /* Add other styling as required */
+  width: 100px;
+  height: auto;
+  max-width: 100%;
+  padding: 5px;
 }
 
+/* Adjust Logo Size for Smaller Screens */
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+    max-width: 70px; /* Adjust for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 50px; /* Adjust for mobile screens */
+  }
+}
+
+/* Search Icon Styles */
 .search-icon {
   position: absolute;
   left: 1rem;
@@ -79,6 +57,7 @@ header {
   z-index: 1;
 }
 
+/* Button Styles */
 .button {
   display: flex;
   align-items: center;
@@ -93,22 +72,23 @@ header {
   padding: 10px 20px;
   color: #09090b;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text drop shadow */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .button:hover {
   background-color: #f39418 !important;
   box-shadow: 0 0 34px #ffb20861 !important;
-  text-shadow: 0 0 4px #ffe825; /* Hover text shadow */
+  text-shadow: 0 0 4px #ffe825;
   border-color: #fff7b2 !important;
 }
 
+/* Icon Styles */
 .icon {
   margin-right: 5px;
-  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3)); /* Icon drop shadow */
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
 }
-/* popup settings 👆 */
 
+/* Popup Styles */
 .popup {
   display: inline-block;
   text-rendering: optimizeLegibility;
@@ -135,11 +115,12 @@ header {
   outline: var(--burger-enable-outline-width) solid transparent;
   outline-offset: 0;
 }
+
 .popup-window {
   transform: scale(var(--nav-default-scale));
   visibility: hidden;
   opacity: 0;
-  position: absolute; /* Ensure it doesn't affect layout */
+  position: absolute;
   padding: var(--nav-padding-y) var(--nav-padding-x);
   background: var(--nav-bg);
   font-family: var(--nav-font-family);
@@ -147,25 +128,28 @@ header {
   border-radius: var(--nav-border-radius);
   box-shadow: var(--nav-shadow-width) var(--nav-shadow-color);
   border: var(--nav-border-width) solid var(--nav-border-color);
-  top: 50px; /* Adjust this value to move the popup down */
-  right: 0; /* Position at the right */
+  top: 50px;
+  right: 0;
   transition: var(--burger-transition);
   margin-top: 10px;
-  z-index: 1000; /* Ensure it appears above other content */
-  max-width: 90vw; /* Limit width to 90% of the viewport width */
-  max-height: 90vh; /* Limit height to 90% of the viewport height */
-  overflow: auto; /* Add scrollbars if content exceeds max dimensions */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  z-index: 1000;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  box-sizing: border-box;
 }
-.profile-text{
+
+/* Profile Text Styles */
+.profile-text {
   color: #fffae4af;
 }
-.profile-text:hover{
+
+.profile-text:hover {
   transition: 1ms;
   color: #221703;
 }
 
-
+/* Popup Window Styles */
 .popup-window legend {
   padding: var(--nav-title-padding-y) var(--nav-title-padding-x);
   margin: 0;
@@ -213,12 +197,10 @@ header {
 .popup-window hr {
   margin: var(--underline-margin-y) 0;
   border: none;
-  border-bottom: var(--underline-border-width) solid
-    var(--underline-border-color);
+  border-bottom: var(--underline-border-width) solid var(--underline-border-color);
 }
 
-/* actions */
-
+/* Popup Actions */
 .popup-window ul button:hover,
 .popup-window ul button:focus-visible,
 .popup-window ul button:hover svg,
@@ -251,18 +233,16 @@ header {
 }
 
 .popup input:checked + .burger span:nth-child(3) {
-  transform: translateX(
-    calc(var(--burger-diameter) * -1 - var(--burger-line-width))
-  );
+  transform: translateX(calc(var(--burger-diameter) * -1 - var(--burger-line-width)));
 }
 
 .popup input:checked ~ nav {
   transform: scale(var(--nav-active-scale));
   visibility: visible;
   opacity: 1;
-} 
+}
 
-
+/* Main Styles */
 main {
   flex-grow: 1;
   padding: 40px 30px;
@@ -270,140 +250,191 @@ main {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* Form Container Styles */
 .form-containerr select {
-width: 100%;
-padding: 15px;
-margin: 5px 0 22px 0;
-display: inline-block;
-border: none;
-background: #f1f1f1;
-border-radius: 5px;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
 }
 
 .form-containerr select:focus {
-background-color: #ddd;
-outline: none;
+  background-color: #ddd;
+  outline: none;
 }
 
 .form-containerr .btn {
-background-color: #4CAF50;
-color: white;
-padding: 16px 20px;
-border: none;
-cursor: pointer;
-width: 100%;
-margin-bottom: 10px;
-opacity: 0.8;
-border-radius: 10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  border-radius: 10px;
 }
 
 .form-containerr .cancel {
-background-color: red;
+  background-color: red;
 }
 
 .form-containerr .btn:hover {
-opacity: 1;
+  opacity: 1;
 }
 
-.close {
-position: absolute;
-top: 10px;
-right: 10px;
-font-size: 24px;
-font-weight: bold;
-color: #fffae4;
-cursor: pointer;
-transition: color 0.3s;
-}
-
-.close:hover {
-color: red;
-}
-/* uploadd */
+/* Upload Styles */
 .custum-file-upload {
-height: 200px;
-margin-top: 20px;
-width: 90%;
-position: relative;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 20px;
-cursor: pointer;
-border: 2px dashed #e8e8e8;
-background-color: #212121;
-padding: 1.5rem;
-border-radius: 10px;
-
+  height: 200px;
+  margin-top: 20px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  border: 2px dashed #e8e8e8;
+  background-color: #212121;
+  padding: 1.5rem;
+  border-radius: 10px;
 }
 
 .custum-file-upload .icon {
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custum-file-upload .icon svg {
-height: 80px;
-fill: #e8e8e8;
+  height: 80px;
+  fill: #e8e8e8;
 }
 
 .custum-file-upload .text {
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custum-file-upload .text span {
-font-weight: 400;
-color: #e8e8e8;
+  font-weight: 400;
+  color: #e8e8e8;
 }
 
 .custum-file-upload input {
-display: none;
+  display: none;
 }
+
+/* Button Styles */
 .buttonn {
-width: 100%;
-position: relative;
-margin-top: 20px;
-overflow: hidden;
-height: 3rem;
-padding: 0 2rem;
-border-radius: 1.5rem;
-background: #fffae4af;
-background-size: 400%;
-color: #333;
-border: none;
-cursor: pointer;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #fffae4af;
+  background-size: 400%;
+  color: #333;
+  border: none;
+  cursor: pointer;
 }
 
 .buttonn:hover::before {
-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .buttonn-content {
-position: relative;
-color: #000;
-
-z-index: 1;
+  position: relative;
+  color: #000;
+  z-index: 1;
 }
 
 .buttonn::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-transform: scaleX(0);
-transform-origin: 0 50%;
-width: 100%;
-height: inherit;
-color: #000;
-border-radius: inherit;
-background: linear-gradient(
-  82.3deg,
-  rgb(231, 129, 46) 10.8%,
-  rgba(223, 130, 23, 0.74) 94.3%
-);
-transition: all 0.475s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  color: #000;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(231, 129, 46) 10.8%,
+    rgba(223, 130, 23, 0.74) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .search-bar {
+    margin: 0 20px;
+  }
+
+  .search-bar input {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    margin: 0 15px;
+  }
+
+  .search-bar input {
+    padding: 8px;
+  }
+
+  .button {
+    padding: 8px 16px;
+  }
+
+  .logo {
+    max-width: 60px;
+  }
+
+  .popup-window {
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .search-bar {
+    margin: 10px 0;
+  }
+
+  .search-bar input {
+    padding: 6px;
+  }
+
+  .logo {
+    max-width: 50px;
+  }
+
+  .popup-window {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
 }
